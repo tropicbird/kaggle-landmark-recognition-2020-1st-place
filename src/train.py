@@ -375,7 +375,8 @@ if __name__ == '__main__':
     tr_filter_ds = GLRDataset(train_filter, normalization=args.normalization, aug=args.val_aug)
     tr_filter_dl = DataLoader(dataset=tr_filter_ds, batch_size=args.batch_size, sampler=SequentialSampler(tr_filter_ds), collate_fn=collate_fn, num_workers=args.num_workers, pin_memory=False)
 
-    experiment_path = args.model_path + args.experiment_name + '/'
+#     experiment_path = args.model_path + args.experiment_name + '/'
+    experiment_path = args.model_path + args.experiment_name #/は不要
 
     if args.logger == 'neptune':
         logger = NeptuneLogger(
@@ -391,6 +392,7 @@ if __name__ == '__main__':
         logger = None
 
     ckpt_save_path = experiment_path + '/ckpt/'
+#     ckpt_save_path = experiment_path + 'ckpt/' #/は不要
     if not os.path.exists(ckpt_save_path):
         os.makedirs(ckpt_save_path)
     ckpt = ModelCheckpoint(ckpt_save_path, monitor='val_gap_pp', verbose=False, mode='max',period=1, save_top_k=1, save_last=True, save_weights_only=args.save_weights_only)

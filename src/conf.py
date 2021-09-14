@@ -23,7 +23,7 @@ args.img_path_val = args.data_path_2019 + 'test/'
 args.img_path_test = args.data_path + 'test/'
 
 try:
-   if args.data_path_2 is not None:
-      args.img_path_train_2 = args.data_path_2 + 'train/' 
+    if args.data_path_2 is not None:
+        args.img_path_train_2 = args.data_path_2 + 'train/' 
 except:
-   args.data_path_2 = None
+    args.data_path_2 = None
