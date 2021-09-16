@@ -13,7 +13,8 @@ args = {
     'train_csv_fn':'train.csv',
 
 #     'gpus':'0,1',
-    'gpus':'0',
+#     'gpus':'0',
+    'gpus':'0,1,2,3',
     'filter_warnings':True,
     'logger': 'neptune',
     'num_sanity_val_steps': 0,
@@ -27,6 +28,7 @@ args = {
     
     'seed':1138,
     'num_workers':4,
+#     'num_workers':8,
     'save_weights_only':True,
 
     'p_trainable': True,
@@ -56,8 +58,10 @@ args = {
     'weight_decay':1e-4,
     'lr': 0.05,
 #     'batch_size': 64,
-    'batch_size': 16,
-    'max_epochs': 10,
+#     'batch_size': 16,
+    'batch_size': 24,
+#     'max_epochs': 10,
+    'max_epochs': 2,
     'scheduler': {"method":"cosine","warmup_epochs": 1},
     
 
