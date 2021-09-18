@@ -15,6 +15,7 @@ args = {
 #     'gpus':'0,1',
 #     'gpus':'0',
     'gpus':'0,1,2,3',
+#     'gpus':4,
     'filter_warnings':True,
     'logger': 'neptune',
     'num_sanity_val_steps': 0,
@@ -60,13 +61,15 @@ args = {
 #     'batch_size': 64,
 #     'batch_size': 16,
     'batch_size': 24,
+#     'batch_size': 28,
 #     'max_epochs': 10,
     'max_epochs': 2,
     'scheduler': {"method":"cosine","warmup_epochs": 1},
     
 
     'n_classes':81313,
-    'data_frac':1.,
+#     'data_frac':1.,
+    'data_frac':0.01,
 
     'neptune_project':'tropicbird/kaggle-landmark',
 }
