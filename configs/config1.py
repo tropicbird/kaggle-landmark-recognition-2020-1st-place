@@ -13,8 +13,9 @@ args = {
     'train_csv_fn':'train.csv',
 
 #     'gpus':'0,1',
-#     'gpus':'0',
-    'gpus':'0,1,2,3',
+    'gpus':'0',
+#     'gpus':'0,1,2,3',
+#     'gpus':'0,1,2,3,4,5,6,7',
 #     'gpus':4,
     'filter_warnings':True,
     'logger': 'neptune',
@@ -30,6 +31,7 @@ args = {
     'seed':1138,
     'num_workers':4,
 #     'num_workers':8,
+#     'num_workers':0, #very slow
     'save_weights_only':True,
 
     'p_trainable': True,
@@ -60,16 +62,16 @@ args = {
     'lr': 0.05,
 #     'batch_size': 64,
 #     'batch_size': 16,
-    'batch_size': 24,
-#     'batch_size': 28,
+#     'batch_size': 24,
+    'batch_size': 26,
 #     'max_epochs': 10,
-    'max_epochs': 2,
+    'max_epochs': 10,
     'scheduler': {"method":"cosine","warmup_epochs": 1},
     
 
     'n_classes':81313,
-#     'data_frac':1.,
-    'data_frac':0.01,
+    'data_frac':1.,
+#     'data_frac':0.01,
 
     'neptune_project':'tropicbird/kaggle-landmark',
 }
