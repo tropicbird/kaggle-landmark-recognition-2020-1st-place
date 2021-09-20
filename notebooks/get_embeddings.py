@@ -16,6 +16,7 @@ from models import *
 from loss import *
 from train import *
 from data import *
+import numpy as np
 
 def gpu_unravel(batch):
     input_dict, target_dict = batch
@@ -67,10 +68,10 @@ if __name__ == '__main__':
 
     val_ds = GLRDataset(train, normalization=args.normalization, aug=aug)
 
-    batch_size = 128
+    batch_size = 512
     print(f'batch_size {batch_size}')
     #batch_size = 8
-    nw=16
+    nw=24
     print(f'num_workers {nw}')
     val_dl = DataLoader(dataset=val_ds,
                         batch_size=batch_size,
@@ -87,7 +88,7 @@ if __name__ == '__main__':
     print("get embeddings")
     #landmark_id to calss_idは不要か。
     embeddings = get_embeddings(val_dl, model)
-    print(f"shape of embeddings:{embeddings.shape}")
+    #print(f"shape of embeddings:{embeddings.shape}")
     print("saving the embeddings")
     np.save(f"../embeddings/{name}_{csv}_embeddings", embeddings)
     print("saving is done")

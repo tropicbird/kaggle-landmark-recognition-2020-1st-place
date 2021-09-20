@@ -5,3 +5,4 @@ input/*
 models/*
 .vscode/settings.json
 google-cloud-sdk/*
+embeddings/*
