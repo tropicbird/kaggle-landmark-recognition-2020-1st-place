@@ -8,8 +8,10 @@ abs_path = os.path.dirname(__file__)
 
 args = {
     'model_path':'../models/',
-    'data_path':'/ssd/kaggle_landmark/input/',
-    'data_path_2019':'/ssd/kaggle_landmark/2019/',
+    #'data_path':'/ssd/kaggle_landmark/input/',
+    'data_path':'../../input/', #Changed!!
+    #'data_path_2019':'/ssd/kaggle_landmark/2019/',
+    'data_path_2019':'../../input/GLDv2/', #Changed!!
     'valid_csv_fn':'recognition_solution_v2.1.csv',
     'train_csv_fn':'train.csv',
     
@@ -17,7 +19,8 @@ args = {
     'logger': 'neptune',
     'num_sanity_val_steps': 0,
 
-    'gpus':'0,1',
+    #'gpus':'0,1',
+    'gpus':'0,1,2,3', #Changed!!
     'distributed_backend': "ddp",
     'sync_batchnorm': True,
 
@@ -55,7 +58,8 @@ args = {
     'optimizer': "sgd",
     'lr': 0.05,
     'weight_decay': 1e-4,
-    'batch_size': 8,
+    'batch_size': 18,
+#     'batch_size': 8,
 
     'max_epochs': 10,
 
@@ -70,7 +74,7 @@ args = {
     
     'crop_size': 600,
 
-    'neptune_project':'xx/kaggle-landmark',
+    'neptune_project':'tropicbird/kaggle-landmark',#changed!!!
 }
 
 
@@ -88,4 +92,3 @@ args['val_aug'] = A.Compose([ A.LongestMaxSize(664,p=1),
                             ], 
                             p=1.0
                             )
-
