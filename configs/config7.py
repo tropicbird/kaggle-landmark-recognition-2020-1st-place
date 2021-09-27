@@ -5,12 +5,15 @@ abs_path = os.path.dirname(__file__)
 
 args = {
     'model_path':'../models/',
-    'data_path':'/ssd/kaggle_landmark/input/',
-    'data_path_2019':'/ssd/kaggle_landmark/2019/',
+#     'data_path':'/ssd/kaggle_landmark/input/',
+    'data_path':'../../input/', #Changed!!
+#     'data_path_2019':'/ssd/kaggle_landmark/2019/',
+    'data_path_2019':'../../input/GLDv2/', #Changed!!
     'valid_csv_fn':'recognition_solution_v2.1.csv',
     'train_csv_fn':'train.csv',
     
-    'gpus':'0,1',
+#     'gpus':'0,1',
+    'gpus':'0,1,2,3', #Changed!!
     'filter_warnings':True,
     'logger': 'neptune',
     'num_sanity_val_steps': 50,
@@ -49,14 +52,15 @@ args = {
     'optimizer': "sgd",
     'weight_decay':1e-4,
     'lr': 0.05,
-    'batch_size': 40,
+#     'batch_size': 40,
+    'batch_size': 24, #Changed
     'max_epochs': 10,
     'scheduler': {"method":"cosine","warmup_epochs": 1},
     
     'n_classes':81313,
     'data_frac':1.,
 
-    'neptune_project':'xx/kaggle-landmark',
+    'neptune_project':'tropicbird/kaggle-landmark',#changed!!!
 }
 
 args['tr_aug'] = A.Compose([A.Resize(height=544,width=672,p=1.),
