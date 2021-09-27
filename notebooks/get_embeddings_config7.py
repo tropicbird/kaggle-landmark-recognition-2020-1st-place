@@ -64,6 +64,7 @@ if __name__ == '__main__':
     
 #     train=train[:5120]
     print(f"train size: {len(train)}")
+    print(f"weights: {pretrained_weights}")
 
 #     aug = A.Compose([
 #                     A.SmallestMaxSize(512),
@@ -84,7 +85,7 @@ if __name__ == '__main__':
 
     val_ds = GLRDataset(train, normalization=args.normalization, aug=aug)
 
-    batch_size = 384
+    batch_size = 400
     print(f'batch_size {batch_size}')
     #batch_size = 8
     nw=24
