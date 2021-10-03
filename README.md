@@ -18,3 +18,6 @@ You need to adjust data paths and other parameters in respective config file to 
 
 The blending and ranking procedure is detailed in ```notebooks/blend_ranking.ipynb```.
 
+# [Modified the coriginal code for personal use] Last update 2021/10/03
+
+For Kaggle Landmark Recognition 2021 competition, I modified the original code created by [psinger](https://github.com/psinger). I basically utilized the config1 (backbone: gluon_seresnext101_32x4d) and config7 (backbone: res2net101_26w_4s) to create my submission in the 2021 version of the competition.
